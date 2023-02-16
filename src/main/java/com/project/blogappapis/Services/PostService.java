@@ -2,6 +2,7 @@ package com.project.blogappapis.Services;
 
 import com.project.blogappapis.Entity.Post;
 import com.project.blogappapis.Payloads.PostDto;
+import com.project.blogappapis.Payloads.PostResponse;
 
 import java.util.List;
 
@@ -11,23 +12,23 @@ public interface PostService {
     PostDto createPost(PostDto  postDto, Integer userId, Integer categoryId);
 
     // Update
-    Post updatePost(PostDto postDto, Integer postId);
+    PostDto updatePost(PostDto postDto, Integer postId);
 
     // Delete
     void deletePost(Integer postId);
 
     // Get all post
-    List<Post> getAllPost();
+    PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
     // Get single post
-    Post getPostById(Integer postId);
+    PostDto getPostById(Integer postId);
 
     // Get all post by Category
-    List<Post> getPostsByCategory(Integer categoryId);
+    List<PostDto> getPostsByCategory(Integer categoryId);
 
     // Get all Posts by User
-    List<Post> getPostsByUser(Integer userId);
+    List<PostDto> getPostsByUser(Integer userId);
 
     // Search posts
-    List<Post> searchPosts(String keyword);
+    List<PostDto> searchPosts(String keyword);
 }

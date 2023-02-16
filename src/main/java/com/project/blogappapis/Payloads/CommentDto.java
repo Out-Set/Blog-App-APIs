@@ -1,6 +1,5 @@
 package com.project.blogappapis.Payloads;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,10 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-public class ApiResponse {
+public class CommentDto {
 
-    private String message;
-    private boolean success;
+    private int id;
 
+    private String content;
 }

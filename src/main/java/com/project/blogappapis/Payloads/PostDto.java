@@ -1,15 +1,19 @@
 package com.project.blogappapis.Payloads;
 
-import com.project.blogappapis.Entity.Category;
-import com.project.blogappapis.Entity.User;
+import com.project.blogappapis.Entity.Comment;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class PostDto {
+
+    private Integer postId;
 
     private String title;
 
@@ -17,8 +21,10 @@ public class PostDto {
 
     private String imageName;
 
-    private Category category;
+    private CategoryDto category;
 
-    private User user;
+    private UserDto user;
+
+    private Set<CommentDto> comments = new HashSet<>();
 
 }
